@@ -5,6 +5,7 @@ from .forms import UserInfoForm
 # Create your views here.
 
 
+
 def viewfield(request):
     context = {}
     
@@ -12,6 +13,7 @@ def viewfield(request):
         form = UserInfoForm(data = request.POST)
         if form.is_valid():
             form.save()
+            return HttpResponse('Success')
         else:
             print(form.errors)
         
